@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 
@@ -47,13 +48,24 @@ func main() {
 				os.Exit(-1)
 			}
 
-			usernameToStore, err := NoEchoPrompt("username >")
+			usernameToStore, err := NoEchoPrompt("username>")
 			if err != nil {
 				os.Exit(-1)
 			}
 
-			passToStore, err := NoEchoPrompt("password >")
+			passToStore, err := NoEchoPrompt("password>")
 			if err != nil {
+				os.Exit(-1)
+			}
+
+			passToConfirm, err := NoEchoPrompt("re-enter password>")
+			if err != nil {
+				os.Exit(-1)
+			}
+
+			if bytes.Compare(passToStore, passToConfirm) != 0 {
+				fmt.Println("Error: Password's do not match.")
+				fmt.Println("Please try again.")
 				os.Exit(-1)
 			}
 
