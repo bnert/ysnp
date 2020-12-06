@@ -6,6 +6,8 @@ import (
 	"crypto/cipher"
 	"encoding/json"
 	"io/ioutil"
+
+	"github.com/atotto/clipboard"
 )
 
 func ReadFile(key []byte, filename string) {
@@ -36,6 +38,7 @@ func ReadFile(key []byte, filename string) {
 
 	var f FileData
 	json.Unmarshal(jsonBytes, &f)
+	clipboard.WriteAll(f.Passwd)
 	fmt.Println("username>", f.User)
-	fmt.Println("password>", f.Passwd)
+	fmt.Println("password> copied to clipboard!")
 }
