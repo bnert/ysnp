@@ -62,7 +62,7 @@ $ go build -o ysnp *.go
 ```
 
 ## Installing
-Once the binary is built, simple copy or symlink the binary into `/usr/local/bin` (May require `sudo`):
+Once the binary is built, simple copy or symlink the binary into `/usr/local/bin` (may require `sudo`):
 Ex.
 ```
 $ cp <path to>/ysnp /usr/local/bin
