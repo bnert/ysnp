@@ -61,7 +61,7 @@ $ make build-release
 $ go build -o ysnp *.go
 ```
 
-### Installing
+## Installing
 Once the binary is built, simple copy or symlink the binary into `/usr/local/bin` (May require `sudo`):
 Ex.
 ```
