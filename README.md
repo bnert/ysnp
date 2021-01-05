@@ -5,6 +5,7 @@ This is a client only, cli based password manager with a pretty simple interface
 
 **warning**: this utility will not protect against actual balrogs... sorry to get your hopes up.
 
+### `ysnp` overview
 ```
 $ ysnp help
 Usage:
